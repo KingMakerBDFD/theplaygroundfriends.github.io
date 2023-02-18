@@ -26,3 +26,23 @@ if (window.location.search.includes('?code=')) {
   })
   .catch(error => console.error(error));
 }
+
+// Este código asume que ya has obtenido el token de acceso del usuario
+// y lo has guardado en la variable "access_token".
+
+// Hacemos una solicitud a la API de Discord para obtener la información del usuario
+fetch('https://discord.com/api/users/@me', {
+  headers: {
+    'Authorization': `Bearer ${access_token}`
+  }
+})
+.then(response => response.json())
+.then(data => {
+  // Una vez que recibimos la información del usuario, podemos obtener la URL de su imagen de perfil
+  const avatarUrl = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`;
+
+  // Actualizamos la imagen del header con la URL de la imagen de perfil del usuario
+  const avatarImg = document.querySelector('#avatar');
+  avatarImg.src = avatarUrl;
+})
+.catch(error => console.error(error));
