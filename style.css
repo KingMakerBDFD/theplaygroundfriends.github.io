@@ -19,18 +19,3 @@ header:hover{
     background: white;
     color: orange;
 }
-
-.primer__texto{
-    font-size: 29px;
-    font-weight: bold;
-    text-align: left;
-    color: #3B454E;
-    padding-top: 30px;
-}
-
-.segundo__texto{
-    font-weight: bold;
-    font-size: 20px;
-    color: #8899A8;
-    padding-top: 20px;
-}
